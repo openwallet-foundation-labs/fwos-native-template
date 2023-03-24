@@ -82,6 +82,9 @@ allprojects {
         maven {
             url "https://maven.scijava.org/content/repositories/jcenter/"
         }
+        maven {
+            url 'https://repo.sovrin.org/repository/maven-public'
+        }
     }
 
     ext {

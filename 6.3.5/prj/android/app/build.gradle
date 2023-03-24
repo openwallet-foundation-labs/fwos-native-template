@@ -131,6 +131,8 @@ dependencies {
 
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
+    implementation 'net.java.dev.jna:jna:5.2.0'
+
     // Flipper debugger
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group: 'com.facebook.fbjni'
