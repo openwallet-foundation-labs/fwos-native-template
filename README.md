@@ -145,12 +145,18 @@ Install the node modules by running the following
 
 ```
 npm install --legacy-peer-deps
+npm install @aries-framework/core
+npm install @aries-framework/react-native
+npm install react-native-fs
+npm install react-native-get-random-values
+npm install indy-sdk-react-native
 ```
 
 Build the Android APK using the following 
 
 ```
-...
+cd ./android
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 ANDROID_SDK_ROOT=/home/skullquake/Android/ ./gradlew -x lint assembleDev
 ```
 
 ## Native Template Version 6.3.5 - iOS
