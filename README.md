@@ -152,6 +152,13 @@ npm install react-native-get-random-values
 npm install indy-sdk-react-native
 ```
 
+For AriesTest, for the barcode scanner, also install the following
+
+```
+npm install react-native-camera 
+npm install react-native-sensitive-info@next
+```
+
 Build the Android APK using the following 
 
 ```
