@@ -1,12 +1,13 @@
 #!/bin/bash
-say setting android reverse proxy
-/mnt/c/usr/bin/adb.exe  reverse tcp:8080 tcp:8080
-/mnt/c/usr/bin/adb.exe  reverse tcp:8083 tcp:8083
-#/mnt/c/usr/bin/adb.exe  reverse tcp:9701 tcp:9701
-#/mnt/c/usr/bin/adb.exe  reverse tcp:9702 tcp:9702
-#/mnt/c/usr/bin/adb.exe  reverse tcp:9703 tcp:9703
-#/mnt/c/usr/bin/adb.exe  reverse tcp:9704 tcp:9704
-#/mnt/c/usr/bin/adb.exe  reverse tcp:9705 tcp:9705
-#/mnt/c/usr/bin/adb.exe  reverse tcp:9706 tcp:9706
-#/mnt/c/usr/bin/adb.exe  reverse tcp:9707 tcp:9707
-#/mnt/c/usr/bin/adb.exe  reverse tcp:9708 tcp:9708
+DEVICE=$1
+ADB=/mnt/c/usr/bin/adb.exe
+if [ -z "$DEVICE" ]
+then
+	$ADB devices|grep -v attached|grep device|cut -f1|while read DEVICE;do
+		./android_reverseproxy.sh "$DEVICE"
+	done
+else
+	say setting android reverse proxy
+	$ADB -s "$DEVICE" reverse tcp:8080 tcp:8080
+	$ADB -s "$DEVICE" reverse tcp:8083 tcp:8083
+fi
