@@ -179,7 +179,7 @@ npm install react-native-get-random-values
 npm install indy-sdk-react-native
 ```
 
-Add the following to `ios/Podfile`
+Ensure the following sources are listed in `ios/Podfile`
 
 ```
 source 'https://github.com/hyperledger/indy-sdk-react-native'
@@ -206,7 +206,14 @@ With `nativeTemplate` selected in the tree view, for both `Project` `nativeTempl
 
 With `nativeTemplate` selected in the tree view, for both `Project` `nativeTemplate` as well as `Target` `nativeTemplate`, under the `Build Settings` tab, under the `Customized` subtab, configure option `Enable Bitcode` to `no`.
 
+| :exclamation:  Issues   |
+|-------------------------|
 
+If you get the following error message
 
+```
+using bridging headers with module interfaces is unsupported
+```
 
+Set `Build Libraries for Distribution` to `no`. This issue has not been resolved as of yet.
 
