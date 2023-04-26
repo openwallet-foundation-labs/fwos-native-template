@@ -168,5 +168,45 @@ cd ./android
 
 ## Native Template Version 6.3.5 - iOS
 
-Todo ...
+Install the node modules by running the following
+
+```
+npm install --legacy-peer-deps
+npm install @aries-framework/core
+npm install @aries-framework/react-native
+npm install react-native-fs
+npm install react-native-get-random-values
+npm install indy-sdk-react-native
+```
+
+Add the following to `ios/Podfile`
+
+```
+source 'https://github.com/hyperledger/indy-sdk-react-native'
+source 'https://cdn.cocoapods.org'
+```
+
+Install the pods as follows
+
+```
+cd ios
+pod install
+pod update Indy
+```
+
+Open the project in `Xcode` using the following
+
+```
+open ./NativeTemplate.xcworkspace
+```
+
+With `nativeTemplate` selected, under `Signing & Capabilities`, under the section `All`, configure your signing configuration.
+
+With `nativeTemplate` selected in the tree view, for both `Project` `nativeTemplate` as well as `Target` `nativeTemplate`, under the `Build Settings` tab, under the `All` subtab, configure option `Build Libraries for Distribution` to `yes`.
+
+With `nativeTemplate` selected in the tree view, for both `Project` `nativeTemplate` as well as `Target` `nativeTemplate`, under the `Build Settings` tab, under the `Customized` subtab, configure option `Enable Bitcode` to `no`.
+
+
+
+
 
