@@ -10,7 +10,7 @@ find ./prj|grep "app-dev-debug.apk"|while read APK;do
 			./android_stop.sh $DEVICE
 		done
         else
-		/mnt/c/usr/bin/say.exe stopping android application
+		say stopping android application
 		$ADB -s "$DEVICE" shell "am force-stop $PACKAGENAME"
         fi
 
