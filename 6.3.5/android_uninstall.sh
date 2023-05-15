@@ -10,7 +10,7 @@ find ./prj|grep "app-dev-debug.apk"|while read APK;do
 			./android_uninstall.sh "$DEVICE"
 		done
         else
-		/mnt/c/usr/bin/say.exe uninstalling android application
+		say uninstalling android application
 		$ADB -s "$DEVICE" uninstall $PACKAGENAME> /dev/null 2>&1
         fi
 

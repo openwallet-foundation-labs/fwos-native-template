@@ -9,7 +9,7 @@ find ./prj|grep "app-dev-debug.apk"|while read APK;do
 			./android_install.sh "$DEVICE"
 		done
 	else
-		/mnt/c/usr/bin/say.exe installing android application
+		say installing android application
 		$ADB -s "$DEVICE" install -g "$APK"
 	fi
 done

@@ -11,7 +11,7 @@ find ./prj|grep "app-dev-debug.apk"|while read APK;do
 			./android_start.sh "$DEVICE"
 		done
         else
-		/mnt/c/usr/bin/say.exe starting android application
+		say starting android application
 		$ADB -s "$DEVICE" shell "monkey -p $PACKAGENAME -c android.intent.category.LAUNCHER 1 > /dev/null 2>&1"
         fi
 done
