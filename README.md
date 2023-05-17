@@ -152,18 +152,6 @@ npm install react-native-get-random-values
 npm install indy-sdk-react-native
 ```
 
-The mendix app events widget is currently used, for that the following is also required
-
-```
-npm install @react-native-community/netinfo
-```
-
-The mendix app events widget is currently used, for that the following is also required
-
-```
-npm install @react-native-community/netinfo
-```
-
 For AriesTest, for the barcode scanner, also install the following
 
 ```
