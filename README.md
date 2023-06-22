@@ -217,3 +217,30 @@ using bridging headers with module interfaces is unsupported
 
 Set `Build Libraries for Distribution` to `no`. This issue has not been resolved as of yet.
 
+
+## Speeding Up Build Process
+
+When compiling the Android APK, all abis are included (`armeabi-v7a`, `arm64-v8a, x86`, `x86_64`). For local development, you can build a single abi as follows using the `PreactNativeArchitectures` flag with a comma seperated list of architectures for faster builds and smaller APKs.
+
+```
+./gradlew :app:assembleDebug -PreactNativeArchitectures=armeabi-v7a,arm64-v8a
+```
+
+or
+
+```
+./gradlew -x lint assembleDev -PreactNativeArchitectures=armeabi-v7a,arm64-v8a
+```
+
+Alternatively, edit `gradle.properties` as follows
+
+```
+reactNativeArchitectures=armeabi-v7a,arm64-v8a
+```
+
+With the above modifications to `gradle.properties` you can build as usual, no special flags have to be passed to `gradlew`.
+
+## References
+
+* [https://aries.js.org/guides/0.4/getting-started](https://aries.js.org/guides/0.4/getting-started)
+* [https://reactnative.dev/docs/next/build-speed](https://reactnative.dev/docs/next/build-speed)
