@@ -240,7 +240,33 @@ reactNativeArchitectures=armeabi-v7a,arm64-v8a
 
 With the above modifications to `gradle.properties` you can build as usual, no special flags have to be passed to `gradlew`.
 
+If the above does not work, try creating a seperate apk for each architecture
+
+Edit `android/app/build.gradle` as follows
+
+```
+def enableSeparateBuildPerCPUArchitecture = true
+```
+
+This will result in seperate APKs that are smaller, e.g.
+
+```
+android/app/build/outputs/apk/dev/debug/app-dev-arm64-v8a-debug.apk
+android/app/build/outputs/apk/dev/debug/app-dev-armeabi-v7a-debug.apk
+android/app/build/outputs/apk/dev/debug/app-dev-x86-debug.apk
+android/app/build/outputs/apk/dev/debug/app-dev-x86_64-debug.apk
+android/app/build/outputs/apk/dev/release/app-dev-arm64-v8a-release-unsigned.apk
+android/app/build/outputs/apk/dev/release/app-dev-armeabi-v7a-release-unsigned.apk
+android/app/build/outputs/apk/dev/release/app-dev-x86-release-unsigned.apk
+android/app/build/outputs/apk/dev/release/app-dev-x86_64-release-unsigned.apk
+```
+
 ## References
 
 * [https://aries.js.org/guides/0.4/getting-started](https://aries.js.org/guides/0.4/getting-started)
 * [https://reactnative.dev/docs/next/build-speed](https://reactnative.dev/docs/next/build-speed)
+* [https://stackoverflow.com/questions/62511110/apk-file-size-is-big-in-react-native](https://stackoverflow.com/questions/62511110/apk-file-size-is-big-in-react-native)
+* [https://stackoverflow.com/questions/54096295/how-do-i-exclude-abi-from-android-app-bundle](https://stackoverflow.com/questions/54096295/how-do-i-exclude-abi-from-android-app-bundle)
+* [https://www.folio3.com/mobile/blog/how-to-reduce-apk-size-in-react-native/](https://www.folio3.com/mobile/blog/how-to-reduce-apk-size-in-react-native/)
+* [https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6](https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6)
+* [https://developer.android.com/build/shrink-code#groovy](https://developer.android.com/build/shrink-code#groovy)
