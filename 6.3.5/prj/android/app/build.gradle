@@ -28,7 +28,12 @@ def enableSeparateBuildPerCPUArchitecture = false
 /**
  * Run Proguard to shrink the Java bytecode in release builds.
  */
+/* original */
+/*
 def enableProguardInReleaseBuilds = false
+*/
+/* entidad */
+def enableProguardInReleaseBuilds = true
 
 /**
  * The preferred build flavor of JavaScriptCore.
@@ -100,7 +105,21 @@ android {
     buildTypes {
         release {
             minifyEnabled enableProguardInReleaseBuilds
+	    // entidad - added
+            shrinkResources true
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+	    //entidad - added
+            ndk {
+                abiFilters "armeabi-v7a", "armeabi" // includes ARM SO files only, so no x86 SO file
+            }
+        }
+	// entidad - added
+        debug {
+            minifyEnabled enableProguardInReleaseBuilds
+            shrinkResources true
+            ndk {
+                abiFilters "armeabi-v7a", "armeabi" // includes ARM SO files only, so no x86 SO file
+            }
         }
     }
     // applicationVariants are e.g. debug, release

@@ -240,9 +240,24 @@ reactNativeArchitectures=armeabi-v7a,arm64-v8a
 
 With the above modifications to `gradle.properties` you can build as usual, no special flags have to be passed to `gradlew`.
 
-If the above does not work, try creating a seperate apk for each architecture
+If the above does not work, try using `abiFilters` by edting `android/app/build.gradle` as follows
 
-Edit `android/app/build.gradle` as follows
+```
+buildTypes {
+	release {
+		ndk {
+			abiFilters "armeabi-v7", "armeabi"
+		}
+	}
+	debug {
+		ndk {
+			abiFilters "armeabi-v7", "armeabi"
+		}
+	}
+}
+```
+
+You can create a separate apk for each architecture  by editing `android/app/build.gradle` as follows
 
 ```
 def enableSeparateBuildPerCPUArchitecture = true
@@ -261,6 +276,7 @@ android/app/build/outputs/apk/dev/release/app-dev-x86-release-unsigned.apk
 android/app/build/outputs/apk/dev/release/app-dev-x86_64-release-unsigned.apk
 ```
 
+
 ## References
 
 * [https://aries.js.org/guides/0.4/getting-started](https://aries.js.org/guides/0.4/getting-started)
@@ -270,3 +286,6 @@ android/app/build/outputs/apk/dev/release/app-dev-x86_64-release-unsigned.apk
 * [https://www.folio3.com/mobile/blog/how-to-reduce-apk-size-in-react-native/](https://www.folio3.com/mobile/blog/how-to-reduce-apk-size-in-react-native/)
 * [https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6](https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6)
 * [https://developer.android.com/build/shrink-code#groovy](https://developer.android.com/build/shrink-code#groovy)
+* [https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6](https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6)
+* [https://stackoverflow.com/questions/54096295/how-do-i-exclude-abi-from-android-app-bundle](https://stackoverflow.com/questions/54096295/how-do-i-exclude-abi-from-android-app-bundle)
+* [https://stackoverflow.com/questions/30794584/exclude-jnilibs-folder-from-production-apk](https://stackoverflow.com/questions/30794584/exclude-jnilibs-folder-from-production-apk)

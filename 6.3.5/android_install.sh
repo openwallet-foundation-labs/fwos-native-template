@@ -1,6 +1,8 @@
 #!/bin/bash
 DEVICE=$1
 ADB=/mnt/c/usr/bin/adb.exe 
+SAY=sam
+SAY=say
 find ./prj|grep "app-dev-debug.apk"|while read APK;do
 	echo installing $APK
 	if [ -z "$DEVICE" ]
@@ -9,7 +11,7 @@ find ./prj|grep "app-dev-debug.apk"|while read APK;do
 			./android_install.sh "$DEVICE"
 		done
 	else
-		say installing android application
+		$SAY installing android application
 		$ADB -s "$DEVICE" install -g "$APK"
 	fi
 done
