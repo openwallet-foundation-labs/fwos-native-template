@@ -9,7 +9,8 @@ find ./prj|grep "app-dev-debug.apk"|while read APK;do
 			./android_app_process_logs.sh "$DEVICE"
 		done
 	else
-		echo 'logcat|grep $(ps -eo pid,args|grep '$PACKAGENAME'|grep -v grep|sed "s/^\ *//g"|cut -f1 -d" ")'|$ADB -s "$DEVICE" shell
+		#echo 'logcat -c;logcat|grep $(ps -eo pid,args|grep '$PACKAGENAME'|grep -v grep|sed "s/^\ *//g"|cut -f1 -d" ")'|$ADB -s "$DEVICE" shell
+		echo 'logcat -T "$(date "+%Y-%m-%d %H:%M:%S.0")"|grep $(ps -eo pid,args|grep '$PACKAGENAME'|grep -v grep|sed "s/^\ *//g"|cut -f1 -d" ")'|$ADB -s "$DEVICE" shell
 	fi
 done
 

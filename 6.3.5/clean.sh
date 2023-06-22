@@ -1,5 +1,7 @@
 #!/bin/bash
-say cleaning android project
+SAY=sam
+SAY=say
+$SAY cleaning android project
 cd ./prj/android
 JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 ANDROID_SDK_ROOT=/home/skullquake/Android/ ./gradlew -x lint clean
 EXITCODE=$?

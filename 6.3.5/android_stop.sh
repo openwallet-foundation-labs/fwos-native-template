@@ -1,6 +1,8 @@
 #!/bin/bash
 DEVICE=$1
 ADB=/mnt/c/usr/bin/adb.exe
+SAY=sam
+SAY=say
 find ./prj|grep "app-dev-debug.apk"|while read APK;do
 	PACKAGENAME=$(aapt dump badging "$APK"|grep package | awk '{print $2}' | sed s/name=//g | sed s/\'//g)
 	echo stopping $PACKAGENAME
@@ -10,7 +12,7 @@ find ./prj|grep "app-dev-debug.apk"|while read APK;do
 			./android_stop.sh $DEVICE
 		done
         else
-		say stopping android application
+		$SAY stopping android application
 		$ADB -s "$DEVICE" shell "am force-stop $PACKAGENAME"
         fi
 

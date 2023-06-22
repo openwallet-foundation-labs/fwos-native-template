@@ -5,9 +5,9 @@ APKTOOL=apktool
 OUTDIR=./tmp/apk
 find ./prj|grep "app-dev-debug.apk"|while read APK;do
 	APKNAME=$(basename $APK .apk)
-	OUTDIR=./tmp/apk/$APKNAME
-	rm -rf "$OUTDIR"
-	mkdir -p "$OUTDIR"
-	echo "extracting $APK to $OUTDIR ..."
-	$APKTOOL decode "$APK"  -f -o "$OUTDIR"
+	APKOUTDIR=./tmp/apk/$APKNAME
+	rm -rf "$APKOUTDIR"
+	mkdir -p "$APKOUTDIR"
+	echo "extracting $APK to $APKOUTDIR ..."
+	$APKTOOL decode "$APK"  -f -o "$APKOUTDIR"
 done
