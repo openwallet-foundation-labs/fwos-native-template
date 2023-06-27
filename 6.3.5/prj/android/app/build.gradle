@@ -104,21 +104,21 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled enableProguardInReleaseBuilds
+            //minifyEnabled enableProguardInReleaseBuilds
 	    // entidad - added
-            shrinkResources true
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            //shrinkResources true
 	    //entidad - added
             ndk {
-                abiFilters "armeabi-v7a", "armeabi" // includes ARM SO files only, so no x86 SO file
+                abiFilters "armeabi-v7a", "arm64-v8a" // includes ARM SO files only, so no x86 SO file
             }
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
 	// entidad - added
         debug {
-            minifyEnabled enableProguardInReleaseBuilds
-            shrinkResources true
+            //minifyEnabled enableProguardInReleaseBuilds
+            //shrinkResources true
             ndk {
-                abiFilters "armeabi-v7a", "armeabi" // includes ARM SO files only, so no x86 SO file
+                abiFilters "armeabi-v7a", "arm64-v8a" // includes ARM SO files only, so no x86 SO file
             }
         }
     }

@@ -289,3 +289,4 @@ android/app/build/outputs/apk/dev/release/app-dev-x86_64-release-unsigned.apk
 * [https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6](https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6)
 * [https://stackoverflow.com/questions/54096295/how-do-i-exclude-abi-from-android-app-bundle](https://stackoverflow.com/questions/54096295/how-do-i-exclude-abi-from-android-app-bundle)
 * [https://stackoverflow.com/questions/30794584/exclude-jnilibs-folder-from-production-apk](https://stackoverflow.com/questions/30794584/exclude-jnilibs-folder-from-production-apk)
+* [https://stackoverflow.com/questions/53322169/how-to-override-defaultconfig-abifilters-in-buildtypes](https://stackoverflow.com/questions/53322169/how-to-override-defaultconfig-abifilters-in-buildtypes)

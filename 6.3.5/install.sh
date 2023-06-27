@@ -4,13 +4,17 @@ SAY=say
 $SAY installing
 cd ./prj
 npm install --legacy-peer-deps
-npm install @aries-framework/core
-npm install @aries-framework/react-native
-npm install react-native-fs
-npm install react-native-get-random-values
-npm install indy-sdk-react-native
-#npm install @react-native-community/netinfo
-#npm install indy-sdk-react-native --save
-#mkdir -p ./prj/android/app/libs/
-#wget -nc https://github.com/hyperledger/indy-sdk-react-native/releases/download/0.2.2/android-indy-sdk-release-device-1.15.0.aar -O ./prj/android/app/libs/android-indy-sdk-release-device-1.15.0.aar 
+# 0.3.0 
+#npm install @aries-framework/core
+#npm install @aries-framework/react-native
+#npm install react-native-fs
+#npm install react-native-get-random-values
+#npm install indy-sdk-react-native
+# 0.4.0 
+npm install @aries-framework/react-native@^0.4.0
+npm install @aries-framework/core@^0.4.0
+npm install @aries-framework/indy-sdk@^0.4.0
+npm install @aries-framework/anoncreds@^0.4.0
+npm install indy-sdk-react-native@^0.3.1
+npm install --save-dev @types/indy-sdk-react-native@npm:@types/indy-sdk
 $SAY installation complete
