@@ -47,6 +47,25 @@ dependencies {
 }
 ```
 
+Edit `android/app/build.gradle` and add abiFilters as follows [reference](https://developer.android.com/ndk/guides/abis)
+
+```
+...
+     buildTypes {
+        release {
+            ...
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
+        }
+        debug {
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
+        }
+    }
+...
+```
 Create a directory as follows `mkdir android/app/src/main/jniLibs` as follows:
 
 ```
