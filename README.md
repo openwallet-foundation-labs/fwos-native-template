@@ -11,7 +11,7 @@ Tools used:
 * java: openjdk 11.0.11 2021-04-20
 * javac: javac 11.0.11
 
-The following part around the NDK differs from [https://github.com/Entidad/mendix-native-template-ariesjs#native-template-version-635---afj-034---android](Native Template Version 6.3.5 - AFJ 0.3.4 - Android). The rest of the steps are very much the same.
+The following part around the NDK differs from [Native Template Version 6.3.5 - AFJ 0.3.4 - Android](https://github.com/Entidad/mendix-native-template-ariesjs#native-template-version-635---afj-034---android). The rest of the steps are very much the same.
 
 Ensure you have NDK installed by using the `sdkmanager` tool
 
@@ -232,8 +232,8 @@ using bridging headers with module interfaces is unsupported
 
 Set `Build Libraries for Distribution` to `no`. This issue has not been resolved as of yet.
 
-
-
+## Native Template Version 6.3.5 - AFJ 0.4.0 - iOS
+Todo...
 
 ## Native Template Version 6.3.5 - AFJ 0.3.4 - Android
 
@@ -421,7 +421,7 @@ cd ./android
 ./gradlew -x lint assembleDev
 ```
 
-## Native Template Version 6.3.5 - iOS
+## Native Template Version 6.3.5 - AFJ 0.3.4 - iOS
 
 Install the node modules by running the following
 
