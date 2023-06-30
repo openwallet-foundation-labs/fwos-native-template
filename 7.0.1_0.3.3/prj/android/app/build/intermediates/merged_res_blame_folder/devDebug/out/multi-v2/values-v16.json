@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.mendix.nativetemplate.app-mergeDevDebugResources-35:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/Users/jorge/.gradle/caches/transforms-3/391342bbfff62ac3c238d8fe90f39e58/transformed/core-1.7.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/Users/jorge/.gradle/caches/transforms-3/a9750ef1d438a790b569a15662de632e/transformed/appcompat-1.4.1/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                }
+            ]
+        }
+    ]
+}
