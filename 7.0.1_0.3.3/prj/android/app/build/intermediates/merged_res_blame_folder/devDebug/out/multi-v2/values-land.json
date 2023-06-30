@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.mendix.nativetemplate.app-mergeDevDebugResources-35:/values-land/values-land.xml",
+            "map": [
+                {
+                    "source": "/Users/jorge/.gradle/caches/transforms-3/a9750ef1d438a790b569a15662de632e/transformed/appcompat-1.4.1/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
+                    }
+                }
+            ]
+        }
+    ]
+}

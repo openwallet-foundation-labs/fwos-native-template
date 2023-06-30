@@ -1,0 +1,6 @@
+module Pods_nativeTemplate {
+  umbrella header "Pods-nativeTemplate-umbrella.h"
+
+  export *
+  module * { export * }
+}
