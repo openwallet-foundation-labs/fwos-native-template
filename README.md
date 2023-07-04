@@ -235,6 +235,10 @@ using bridging headers with module interfaces is unsupported
 
 Set `Build Libraries for Distribution` to `no`. This issue has not been resolved as of yet.
 
+## Native Template Version 7.0.1 - AFJ 0.4.0 - iOS
+
+Todo...
+
 ## Native Template Version 6.3.5 - AFJ 0.4.0 - Android
 
 This native template is located in directory `6.3.5_0.4.0` in this source tree.
