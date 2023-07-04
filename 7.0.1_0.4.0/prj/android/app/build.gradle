@@ -92,7 +92,17 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
         }
+        debug {
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
+        }
+
+
     }
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
@@ -184,3 +194,4 @@ task copyDownloadableDepsToLibs(type: Copy) {
 apply from: file("../../node_modules/@mendix/native/android/mendix.gradle"); applyMendixGradle(project)
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+

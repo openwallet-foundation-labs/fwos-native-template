@@ -68,7 +68,7 @@ dependencies {
 }
 ```
 
-Edit `android/app/build.gradle` and add abiFilters as follows [reference](https://developer.android.com/ndk/guides/abis)
+For smaller APK sizes, limit the buildTypes by editing `android/app/build.gradle` and add abiFilters as follows [reference](https://developer.android.com/ndk/guides/abis)
 
 ```
 ...
