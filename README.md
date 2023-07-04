@@ -192,6 +192,9 @@ npm install @aries-framework/anoncreds-rs@^0.4.0
 npm install @hyperledger/anoncreds-react-native@^0.1.0
 npm install indy-sdk-react-native@^0.3.1
 npm install --save-dev @types/indy-sdk-react-native@npm:@types/indy-sdk
+npm install react-native-fs
+npm install react-native-get-random-values
+npm install react-native-camera
 ```
 
 Ensure the following sources are listed in `ios/Podfile`
@@ -231,8 +234,6 @@ using bridging headers with module interfaces is unsupported
 ```
 
 Set `Build Libraries for Distribution` to `no`. This issue has not been resolved as of yet.
-
-
 
 ## Native Template Version 6.3.5 - AFJ 0.4.0 - Android
 
