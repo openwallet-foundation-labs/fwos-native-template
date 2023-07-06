@@ -180,10 +180,27 @@ public class MainActivity extends ReactActivity {
   }
 }
 ```
+Edit `package.json` and ensure the following overrides are added
+
+```
+{
+  "overrides": {
+    "@cosmjs/amino": "npm:@cosmjs-rn/amino@^0.27.1",
+    "@cosmjs/encoding": "npm:@cosmjs-rn/encoding@^0.27.1",
+    "@cosmjs/math": "npm:@cosmjs-rn/math@^0.27.1",
+    "@cosmjs/stargate": "npm:@cosmjs-rn/stargate@^0.27.1",
+    "@cosmjs/tendermint-rpc": "npm:@cosmjs-rn/tendermint-rpc@^0.27.1",
+    "@cosmjs/utils": "npm:@cosmjs-rn/utils@^0.27.1",
+    "@cosmjs/proto-signing": "npm:@cosmjs-rn/proto-signing@^0.27.1",
+    "@cosmjs/crypto": "npm:@cosmjs-rn/crypto@^0.27.1"
+  }
+}
+```
 
 Install the node modules by running the following
 
 ```
+npm install --legacy-peer-deps
 npm install @aries-framework/react-native@^0.4.0
 npm install @aries-framework/core@^0.4.0
 npm install @aries-framework/indy-sdk@^0.4.0
@@ -192,6 +209,12 @@ npm install @aries-framework/anoncreds-rs@^0.4.0
 npm install @hyperledger/anoncreds-react-native@^0.1.0
 npm install indy-sdk-react-native@^0.3.1
 npm install --save-dev @types/indy-sdk-react-native@npm:@types/indy-sdk
+npm install @hyperledger/aries-askar-react-native@0.1.0
+npm install @aries-framework/indy-vdr@0.4.0
+npm install @hyperledger/indy-vdr-shared@0.1.0
+npm install @hyperledger/indy-vdr-react-native@^0.1.0
+npm install @aries-framework/cheqd
+npm install react-native-sensitive-info@next
 npm install react-native-fs
 npm install react-native-get-random-values
 npm install react-native-camera
