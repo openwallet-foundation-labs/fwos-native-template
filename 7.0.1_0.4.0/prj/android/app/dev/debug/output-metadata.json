@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "io.entidad.app.ariessdk.developerapp",
+  "variantName": "devDebug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 8,
+      "versionName": "0.0.6-developerApp",
+      "outputFile": "app-dev-debug.apk"
+    }
+  ],
+  "elementType": "File"
+}
