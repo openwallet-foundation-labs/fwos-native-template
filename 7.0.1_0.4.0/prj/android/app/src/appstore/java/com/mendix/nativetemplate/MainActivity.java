@@ -11,12 +11,6 @@ import com.mendix.mendixnative.config.AppUrl;
 import com.mendix.mendixnative.react.MendixApp;
 import com.mendix.mendixnative.react.MxConfiguration;
 
-// entidad
-import android.os.Bundle;
-import android.system.ErrnoException;
-import android.system.Os;
-import java.io.File;
-
 public class MainActivity extends MendixReactActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,12 +27,5 @@ public class MainActivity extends MendixReactActivity {
             isDarkMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES;
         }
         setTheme(isDarkMode ? R.style.AppTheme : R.style.AppTheme_Dark);
-	// entidad
-	try {
-		Os.setenv("EXTERNAL_STORAGE", getExternalFilesDir(null).getAbsolutePath(), true);
-		System.loadLibrary("indy");
-	} catch (ErrnoException e) {
-		e.printStackTrace();
-	}
     }
 }

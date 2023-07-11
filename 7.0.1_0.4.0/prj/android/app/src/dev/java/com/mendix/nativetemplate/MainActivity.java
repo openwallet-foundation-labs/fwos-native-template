@@ -42,12 +42,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-// entidad
-import android.os.Bundle;
-import android.system.ErrnoException;
-import android.system.Os;
-import java.io.File;
-
 public class MainActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
     static private final int CAMERA_REQUEST = 1;
     private final Executor httpExecutor = Executors.newSingleThreadExecutor();
@@ -62,13 +56,6 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-	try {
-		Os.setenv("EXTERNAL_STORAGE", getExternalFilesDir(null).getAbsolutePath(), true);
-		System.loadLibrary("indy");
-	} catch (ErrnoException e) {
-		e.printStackTrace();
-	}
-
         setContentView(R.layout.activity_main_dev);
 
         appPreferences = new AppPreferences(this);

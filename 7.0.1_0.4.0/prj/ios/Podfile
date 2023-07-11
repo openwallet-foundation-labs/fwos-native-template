@@ -1,5 +1,4 @@
-source 'https://github.com/hyperledger/indy-sdk-react-native'
-source 'https://cdn.cocoapods.org'
+source 'https://cdn.cocoapods.org/'
 
 deployment_target = '12.4'
 # Uncomment the next line to define a global platform for your project
