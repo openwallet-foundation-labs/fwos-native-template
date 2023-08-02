@@ -59,12 +59,12 @@ android {
     }
     namespace "com.mendix.nativetemplate"
     defaultConfig {
-        applicationId "myapp.ariessdkmendix"
+        applicationId 'io.entidad.app.ariessdk'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         missingDimensionStrategy "react-native-camera", "general"
-        versionCode 1
-        versionName "0.0.1"
+        versionCode 9
+        versionName '0.0.6'
         testBuildType System.getProperty("testBuildType", "debug")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         resValue "string", "CODE_PUSH_APK_BUILD_TIME", String.format("\"%d\"", System.currentTimeMillis())
@@ -98,7 +98,7 @@ android {
         }
         debug {
             ndk {
-                abiFilters "armeabi-v7a", "arm64-v8a"
+                abiFilters "armeabi-v7a", "arm64-v8a","x86" //entidad: for emulator add ',"x86"'
             }
         }
     }
