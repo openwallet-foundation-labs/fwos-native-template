@@ -187,6 +187,10 @@ PODS:
     - GoogleUtilities/MethodSwizzler
   - GoogleUtilities/UserDefaults (7.11.1):
     - GoogleUtilities/Logger
+  - Indy (1.16.0)
+  - indy-sdk-react-native (0.3.1):
+    - Indy
+    - React
   - indy-vdr (0.1.0):
     - React
     - React-callinvoker
@@ -422,13 +426,13 @@ PODS:
   - React-jsinspector (0.70.7)
   - React-logger (0.70.7):
     - glog
-  - react-native-camera (3.40.0):
+  - react-native-camera (3.44.3):
     - React-Core
-    - react-native-camera/RCT (= 3.40.0)
-    - react-native-camera/RN (= 3.40.0)
-  - react-native-camera/RCT (3.40.0):
+    - react-native-camera/RCT (= 3.44.3)
+    - react-native-camera/RN (= 3.44.3)
+  - react-native-camera/RCT (3.44.3):
     - React-Core
-  - react-native-camera/RN (3.40.0):
+  - react-native-camera/RN (3.44.3):
     - React-Core
   - react-native-cameraroll (4.0.1):
     - React
@@ -603,6 +607,7 @@ DEPENDENCIES:
   - FlipperKit/SKIOSNetworkPlugin (= 0.189.0)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - GoogleUtilities
+  - indy-sdk-react-native (from `../node_modules/indy-sdk-react-native`)
   - "indy-vdr (from `../node_modules/@hyperledger/indy-vdr-react-native`)"
   - IQKeyboardManager
   - OpenSSL-Universal (= 1.1.1100)
@@ -665,6 +670,8 @@ DEPENDENCIES:
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
+  https://github.com/hyperledger/indy-sdk-react-native:
+    - Indy
   trunk:
     - CocoaAsyncSocket
     - Firebase
@@ -715,6 +722,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/React/FBReactNativeSpec"
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+  indy-sdk-react-native:
+    :path: "../node_modules/indy-sdk-react-native"
   indy-vdr:
     :path: "../node_modules/@hyperledger/indy-vdr-react-native"
   Permission-Camera:
@@ -855,6 +864,8 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 40c70a7d89013f0eca72006c4b9732163ea4cdae
   GoogleDataTransport: f0308f5905a745f94fb91fea9c6cbaf3831cb1bd
   GoogleUtilities: 9aa0ad5a7bc171f8bae016300bfcfa3fb8425749
+  Indy: d9976ce47c0308bd1fea6f90e3ad3db59a3b49b9
+  indy-sdk-react-native: d98862d0fffa42cc427d5ceffb6589e7c7ce8c46
   indy-vdr: 85cd66089f151256581323440e78988891f4082e
   IQKeyboardManager: b1fd66ccf7a79095bdcc4a2735231586f744216e
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
@@ -878,7 +889,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: e95cdd036e7947ddf87f3049319ac3064deb76b5
   React-jsinspector: 1c34fea1868136ecde647bc11fae9266d4143693
   React-logger: e9f407f9fdf3f3ce7749ae6f88affe63e8446019
-  react-native-camera: 35854c4f764a4a6cf61c1c3525888b92f0fe4b31
+  react-native-camera: b8cc03e2feec0c04403d0998e37cf519d8fd4c6f
   react-native-cameraroll: 60ba0068826eab1c8d43146191bafd4363ea58a7
   react-native-get-random-values: dee677497c6a740b71e5612e8dbd83e7539ed5bb
   react-native-image-picker: 8cb4280e2c1efc3daeb2d9d597f9429a60472e40

@@ -9,7 +9,9 @@
   "dependencies": {
     "@aries-framework/anoncreds": "^0.4.0",
     "@aries-framework/anoncreds-rs": "^0.4.0",
+    "@aries-framework/cheqd": "^0.4.0",
     "@aries-framework/core": "^0.4.0",
+    "@aries-framework/indy-sdk": "^0.4.0",
     "@aries-framework/indy-vdr": "^0.4.0",
     "@aries-framework/react-native": "^0.4.0",
     "@hyperledger/anoncreds-react-native": "^0.1.0",
@@ -26,8 +28,9 @@
     "@react-native-firebase/app": "17.3.0",
     "@react-native-firebase/messaging": "17.3.0",
     "@react-native-picker/picker": "^2.4.8",
+    "indy-sdk-react-native": "^0.3.1",
     "react-native": "0.70.7",
-    "react-native-camera": "^3.40.0",
+    "react-native-camera": "^3.44.3",
     "react-native-code-push": "7.0.5",
     "react-native-device-info": "8.0.1",
     "react-native-fast-image": "8.3.2",
@@ -49,6 +52,7 @@
   "devDependencies": {
     "@babel/runtime": "^7.8.4",
     "@mendix/native-mobile-toolkit": "latest",
+    "@types/indy-sdk-react-native": "npm:@types/indy-sdk@^1.16.27",
     "detox": "19.13.0",
     "jetifier": "^1.6.3",
     "metro-react-native-babel-preset": "~0.72.3",
