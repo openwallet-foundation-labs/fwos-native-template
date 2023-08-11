@@ -1,4 +1,4 @@
-# Mendix React Native Template for AriesJS Project
+# Mendix React Native Template for Farmworker Wallet OS Project
 
 ## Native Template Version 7.0.1 - AFJ 0.4.0 - Android
 
