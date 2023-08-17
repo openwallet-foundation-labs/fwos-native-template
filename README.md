@@ -105,6 +105,7 @@ npm install react-native-sensitive-info@next
 npm install react-native-fs
 npm install react-native-get-random-values
 npm install react-native-camera
+npm install react-native-argon2 --save
 ```
 
 ## Native Template Version 7.0.1 - AFJ 0.4.0 - iOS
@@ -279,7 +280,7 @@ npm install @aries-framework/anoncreds-rs@^0.4.0
 npm install @hyperledger/anoncreds-react-native@^0.1.0
 npm install indy-sdk-react-native@^0.3.1
 npm install --save-dev @types/indy-sdk-react-native@npm:@types/indy-sdk
-`
+```
 
 Ensure the following sources are listed in `ios/Podfile`
 
@@ -616,18 +617,3 @@ android/app/build/outputs/apk/dev/release/app-dev-armeabi-v7a-release-unsigned.a
 android/app/build/outputs/apk/dev/release/app-dev-x86-release-unsigned.apk
 android/app/build/outputs/apk/dev/release/app-dev-x86_64-release-unsigned.apk
 ```
-
-
-## References
-
-* [https://aries.js.org/guides/0.4/getting-started](https://aries.js.org/guides/0.4/getting-started)
-* [https://reactnative.dev/docs/next/build-speed](https://reactnative.dev/docs/next/build-speed)
-* [https://stackoverflow.com/questions/62511110/apk-file-size-is-big-in-react-native](https://stackoverflow.com/questions/62511110/apk-file-size-is-big-in-react-native)
-* [https://stackoverflow.com/questions/54096295/how-do-i-exclude-abi-from-android-app-bundle](https://stackoverflow.com/questions/54096295/how-do-i-exclude-abi-from-android-app-bundle)
-* [https://www.folio3.com/mobile/blog/how-to-reduce-apk-size-in-react-native/](https://www.folio3.com/mobile/blog/how-to-reduce-apk-size-in-react-native/)
-* [https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6](https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6)
-* [https://developer.android.com/build/shrink-code#groovy](https://developer.android.com/build/shrink-code#groovy)
-* [https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6](https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6)
-* [https://stackoverflow.com/questions/54096295/how-do-i-exclude-abi-from-android-app-bundle](https://stackoverflow.com/questions/54096295/how-do-i-exclude-abi-from-android-app-bundle)
-* [https://stackoverflow.com/questions/30794584/exclude-jnilibs-folder-from-production-apk](https://stackoverflow.com/questions/30794584/exclude-jnilibs-folder-from-production-apk)
-* [https://stackoverflow.com/questions/53322169/how-to-override-defaultconfig-abifilters-in-buildtypes](https://stackoverflow.com/questions/53322169/how-to-override-defaultconfig-abifilters-in-buildtypes)
