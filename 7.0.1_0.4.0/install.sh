@@ -18,4 +18,5 @@ npm install react-native-sensitive-info@next
 npm install react-native-fs
 npm install react-native-get-random-values
 npm install react-native-camera
+npm install react-native-argon2 --save
 $SAY installation complete

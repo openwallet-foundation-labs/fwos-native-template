@@ -88,64 +88,27 @@ For smaller APK sizes, limit the buildTypes by editing `android/app/build.gradle
 ...
 ```
 
-Edit `package.json` and ensure the following overrides are added
-
-```
-{
-  "overrides": {
-    "@cosmjs/amino": "npm:@cosmjs-rn/amino@^0.27.1",
-    "@cosmjs/encoding": "npm:@cosmjs-rn/encoding@^0.27.1",
-    "@cosmjs/math": "npm:@cosmjs-rn/math@^0.27.1",
-    "@cosmjs/stargate": "npm:@cosmjs-rn/stargate@^0.27.1",
-    "@cosmjs/tendermint-rpc": "npm:@cosmjs-rn/tendermint-rpc@^0.27.1",
-    "@cosmjs/utils": "npm:@cosmjs-rn/utils@^0.27.1",
-    "@cosmjs/proto-signing": "npm:@cosmjs-rn/proto-signing@^0.27.1",
-    "@cosmjs/crypto": "npm:@cosmjs-rn/crypto@^0.27.1"
-  }
-}
-```
-
 Install the node modules by running the following
 
 ```
 npm install --legacy-peer-deps
 npm install @aries-framework/react-native@^0.4.0
 npm install @aries-framework/core@^0.4.0
-npm install @aries-framework/indy-sdk@^0.4.0
 npm install @aries-framework/anoncreds@^0.4.0
 npm install @aries-framework/anoncreds-rs@^0.4.0
 npm install @hyperledger/anoncreds-react-native@^0.1.0
-npm install indy-sdk-react-native@^0.3.1
-npm install --save-dev @types/indy-sdk-react-native@npm:@types/indy-sdk
-npm install @hyperledger/aries-askar-react-native@0.1.0
+npm install @hyperledger/aries-askar-react-native@^0.1.0
 npm install @aries-framework/indy-vdr@0.4.0
 npm install @hyperledger/indy-vdr-shared@0.1.0
 npm install @hyperledger/indy-vdr-react-native@^0.1.0
-npm install @aries-framework/cheqd
 npm install react-native-sensitive-info@next
 npm install react-native-fs
 npm install react-native-get-random-values
 npm install react-native-camera
+npm install react-native-argon2 --save
 ```
 
 ## Native Template Version 7.0.1 - AFJ 0.4.0 - iOS
-
-Edit `package.json` and ensure the following overrides are added
-
-```
-{
-  "overrides": {
-    "@cosmjs/amino": "npm:@cosmjs-rn/amino@^0.27.1",
-    "@cosmjs/encoding": "npm:@cosmjs-rn/encoding@^0.27.1",
-    "@cosmjs/math": "npm:@cosmjs-rn/math@^0.27.1",
-    "@cosmjs/stargate": "npm:@cosmjs-rn/stargate@^0.27.1",
-    "@cosmjs/tendermint-rpc": "npm:@cosmjs-rn/tendermint-rpc@^0.27.1",
-    "@cosmjs/utils": "npm:@cosmjs-rn/utils@^0.27.1",
-    "@cosmjs/proto-signing": "npm:@cosmjs-rn/proto-signing@^0.27.1",
-    "@cosmjs/crypto": "npm:@cosmjs-rn/crypto@^0.27.1"
-  }
-}
-```
 
 Install the node modules by running the following
 
@@ -153,17 +116,13 @@ Install the node modules by running the following
 npm install --legacy-peer-deps
 npm install @aries-framework/react-native@^0.4.0
 npm install @aries-framework/core@^0.4.0
-npm install @aries-framework/indy-sdk@^0.4.0
 npm install @aries-framework/anoncreds@^0.4.0
 npm install @aries-framework/anoncreds-rs@^0.4.0
 npm install @hyperledger/anoncreds-react-native@^0.1.0
-npm install indy-sdk-react-native@^0.3.1
-npm install --save-dev @types/indy-sdk-react-native@npm:@types/indy-sdk
-npm install @hyperledger/aries-askar-react-native@0.1.0
+npm install @hyperledger/aries-askar-react-native@^0.1.0
 npm install @aries-framework/indy-vdr@0.4.0
 npm install @hyperledger/indy-vdr-shared@0.1.0
 npm install @hyperledger/indy-vdr-react-native@^0.1.0
-npm install @aries-framework/cheqd
 npm install react-native-sensitive-info@next
 npm install react-native-fs
 npm install react-native-get-random-values
@@ -173,7 +132,6 @@ npm install react-native-camera
 Ensure the following sources are listed in `ios/Podfile`
 
 ```
-source 'https://github.com/hyperledger/indy-sdk-react-native'
 source 'https://cdn.cocoapods.org'
 ```
 
@@ -182,7 +140,6 @@ Install the pods as follows
 ```
 cd ios
 pod install
-pod update Indy
 ```
 
 Open the project in `Xcode` using the following
@@ -323,7 +280,7 @@ npm install @aries-framework/anoncreds-rs@^0.4.0
 npm install @hyperledger/anoncreds-react-native@^0.1.0
 npm install indy-sdk-react-native@^0.3.1
 npm install --save-dev @types/indy-sdk-react-native@npm:@types/indy-sdk
-`
+```
 
 Ensure the following sources are listed in `ios/Podfile`
 
@@ -660,18 +617,3 @@ android/app/build/outputs/apk/dev/release/app-dev-armeabi-v7a-release-unsigned.a
 android/app/build/outputs/apk/dev/release/app-dev-x86-release-unsigned.apk
 android/app/build/outputs/apk/dev/release/app-dev-x86_64-release-unsigned.apk
 ```
-
-
-## References
-
-* [https://aries.js.org/guides/0.4/getting-started](https://aries.js.org/guides/0.4/getting-started)
-* [https://reactnative.dev/docs/next/build-speed](https://reactnative.dev/docs/next/build-speed)
-* [https://stackoverflow.com/questions/62511110/apk-file-size-is-big-in-react-native](https://stackoverflow.com/questions/62511110/apk-file-size-is-big-in-react-native)
-* [https://stackoverflow.com/questions/54096295/how-do-i-exclude-abi-from-android-app-bundle](https://stackoverflow.com/questions/54096295/how-do-i-exclude-abi-from-android-app-bundle)
-* [https://www.folio3.com/mobile/blog/how-to-reduce-apk-size-in-react-native/](https://www.folio3.com/mobile/blog/how-to-reduce-apk-size-in-react-native/)
-* [https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6](https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6)
-* [https://developer.android.com/build/shrink-code#groovy](https://developer.android.com/build/shrink-code#groovy)
-* [https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6](https://dev.to/riteshshukla04/reduce-apk-size-in-react-native-aj6)
-* [https://stackoverflow.com/questions/54096295/how-do-i-exclude-abi-from-android-app-bundle](https://stackoverflow.com/questions/54096295/how-do-i-exclude-abi-from-android-app-bundle)
-* [https://stackoverflow.com/questions/30794584/exclude-jnilibs-folder-from-production-apk](https://stackoverflow.com/questions/30794584/exclude-jnilibs-folder-from-production-apk)
-* [https://stackoverflow.com/questions/53322169/how-to-override-defaultconfig-abifilters-in-buildtypes](https://stackoverflow.com/questions/53322169/how-to-override-defaultconfig-abifilters-in-buildtypes)
