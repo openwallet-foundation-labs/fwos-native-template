@@ -19,4 +19,5 @@ npm install react-native-fs
 npm install react-native-get-random-values
 npm install react-native-camera
 npm install react-native-argon2 --save
+npm install react-native-device-info
 $SAY installation complete
