@@ -3,6 +3,7 @@ DEVICE=$1
 ADB=/mnt/c/usr/bin/adb.exe
 SAY=sam
 SAY=say
+SAY=echo
 find ./prj|grep "app-appstore-debug.apk"|while read APK;do
 	PACKAGENAME=$(aapt dump badging "$APK"|grep package | awk '{print $2}' | sed s/name=//g | sed s/\'//g)
 	echo stopping $PACKAGENAME
