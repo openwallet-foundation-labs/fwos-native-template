@@ -157,6 +157,10 @@ npm install react-native-sensitive-info@next
 npm install react-native-fs
 npm install react-native-get-random-values
 npm install react-native-camera
+npm install react-native-argon2 --save
+npm install --save react-native-crypto
+npm install --save react-native-randombytes
+npm install --save-dev rn-nodeify
 ```
 
 Ensure the following sources are listed in `ios/Podfile`
