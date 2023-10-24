@@ -1,10 +1,10 @@
 {
     "configVersion": 2,
-    "appIdentifier": "myapp.fwosdemoapp",
-    "appName": "fwos-demo-app",
+    "appIdentifier": "myapp.ariessdkmendix",
+    "appName": "aries-sdk-mendix",
     "bundleName": {
-        "main": "fwosDemoApp",
-        "dev": "fwosDemoAppDev"
+        "main": "ariesSdkMendix",
+        "dev": "ariesSdkMendDev"
     },
     "deviceTarget": {
         "phone": true,

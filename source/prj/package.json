@@ -1,20 +1,21 @@
 {
   "name": "native-template",
-  "version": "7.0.6",
+  "version": "7.0.9",
   "private": true,
   "scripts": {
     "postinstall": "node patches/apply-patches.js && jetify",
     "configure": "native-mobile-toolkit configure --config-path='./config.json' --verbose"
   },
   "dependencies": {
-    "@aries-framework/anoncreds": "^0.4.1",
-    "@aries-framework/anoncreds-rs": "^0.4.1",
-    "@aries-framework/askar": "^0.4.0",
-    "@aries-framework/core": "^0.4.1",
+    "@aries-framework/anoncreds": "^0.4.2",
+    "@aries-framework/anoncreds-rs": "^0.4.2",
+    "@aries-framework/askar": "^0.4.1",
+    "@aries-framework/cheqd": "^0.4.2",
+    "@aries-framework/core": "^0.4.2",
     "@aries-framework/indy-vdr": "^0.4.1",
-    "@aries-framework/openid4vc-client": "^0.4.0",
-    "@aries-framework/question-answer": "^0.4.0",
-    "@aries-framework/react-native": "^0.4.1",
+    "@aries-framework/openid4vc-client": "^0.4.1",
+    "@aries-framework/question-answer": "^0.4.1",
+    "@aries-framework/react-native": "^0.4.2",
     "@entidad/questionnaire": "git+http://github.com/entidad/aries-agent-module-questionnaire.git",
     "@hyperledger/anoncreds-react-native": "^0.1.0",
     "@hyperledger/aries-askar-react-native": "^0.1.0",
@@ -32,11 +33,13 @@
     "@react-native-picker/picker": "^2.4.8",
     "base-64": "^1.0.0",
     "big-integer": "^1.6.51",
+    "hermes-engine": "^0.11.0",
     "json-query": "^2.2.2",
     "react-native": "0.70.7",
     "react-native-argon2": "^2.0.1",
     "react-native-camera": "^3.40.0",
     "react-native-code-push": "7.0.5",
+    "react-native-crypto": "^2.2.0",
     "react-native-device-info": "^8.0.1",
     "react-native-fast-image": "8.3.2",
     "react-native-fs": "^2.20.0",
@@ -46,6 +49,7 @@
     "react-native-localize": "1.4.2",
     "react-native-permissions": "3.3.1",
     "react-native-push-notification": "8.1.1",
+    "react-native-randombytes": "^3.6.1",
     "react-native-reanimated": "1.13.1",
     "react-native-safe-area-context": "3.1.8",
     "react-native-sensitive-info": "^6.0.0-alpha.9",
@@ -60,7 +64,8 @@
     "detox": "19.13.0",
     "jetifier": "^1.6.3",
     "metro-react-native-babel-preset": "~0.72.3",
-    "patch-package": "^6.2.2"
+    "patch-package": "^6.2.2",
+    "rn-nodeify": "^10.3.0"
   },
   "engines": {
     "node": ">=16"

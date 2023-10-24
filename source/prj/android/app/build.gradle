@@ -5,8 +5,7 @@ import com.android.build.OutputFile
 
 project.ext.react = [
         bundleForVariant: { def variant -> false },
-        //enableHermes : false  // clean and rebuild if changing //entidad - original
-        enableHermes : true // clean and rebuild if changing //entidad - modified
+        enableHermes : true // clean and rebuild if changing
 ]
 
 apply from: file("../../node_modules/react-native/react.gradle")
@@ -46,8 +45,7 @@ def jscFlavor = "org.webkit:android-jsc:+"
  * on project.ext.react, JavaScript will not be compiled to Hermes Bytecode
  * and the benefits of using Hermes will therefore be sharply reduced.
  */
-//def enableHermes = project.ext.react.get("enableHermes", false);//entidad - original
-def enableHermes = project.ext.react.get("enableHermes", true);//entidad - modified
+def enableHermes = project.ext.react.get("enableHermes", true);
 
 android {
     // We use NDK 23 which has both M1 support and is the side-by-side NDK version from AGP.
@@ -61,7 +59,7 @@ android {
     }
     namespace "com.mendix.nativetemplate"
     defaultConfig {
-        applicationId "myapp.fwosdemoapp"
+        applicationId "myapp.ariessdkmendix"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         missingDimensionStrategy "react-native-camera", "general"
@@ -138,14 +136,11 @@ dependencies {
 
     // Javascript engine
     if (enableHermes) {
-	/* entidad - original
-        def hermesPath = "../../node_modules/hermes-engine/android/";
-        implementation files(hermesPath + "hermes-debug.aar")
-	*/
-	/* entidad - modified */
-	implementation("com.facebook.react:hermes-engine:+") {
-		exclude group:'com.facebook.fbjni'
-	}
+        //def hermesPath = "../../node_modules/hermes-engine/android/";
+        //implementation files(hermesPath + "hermes-debug.aar")
+        implementation("com.facebook.react:hermes-engine:+") {
+                exclude group:'com.facebook.fbjni'
+        }
     } else {
         implementation jscFlavor
     }
@@ -154,8 +149,8 @@ dependencies {
     implementation project(":react-native-code-push")
     implementation project(":mendixnative-release")
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    //implementation "org.webkit:android-jsc:r245459"//entidad - original
-    implementation "org.webkit:android-jsc:r174650"//entidad - modified
+    //implementation "org.webkit:android-jsc:r245459"
+    implementation "org.webkit:android-jsc:r174650"
 
     // Explicit add okhttp
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
