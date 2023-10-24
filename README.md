@@ -134,6 +134,8 @@ npm install react-native-argon2 --save
 ```
 ## Native Template - iOS
 
+This native template is located in directory `source` in this source tree.
+
 Install the node modules by running the following
 
 ```
