@@ -1,1 +1,0 @@
-../../../../../node_modules/@mendix/react-native-sqlite-storage/platforms/ios/SQLite.h

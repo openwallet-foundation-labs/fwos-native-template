@@ -1,6 +1,0 @@
-module Pods_dev {
-  umbrella header "Pods-dev-umbrella.h"
-
-  export *
-  module * { export * }
-}

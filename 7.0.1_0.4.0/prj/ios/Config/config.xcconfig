@@ -1,8 +1,0 @@
-PRODUCT_BUNDLE_IDENTIFIER = $(BUNDLE_IDENTIFIER)$(BUNDLE_IDENTIFIER_APPEND)
-
-BUNDLE_DISPLAY_NAME = aries-sdk-mendix
-BUNDLE_IDENTIFIER = myapp.ariessdkmendix
-
-RUNTIME_URL = http:\/\/localhost:8080
-
-PRODUCT_NAME = ariesSdkMendix
