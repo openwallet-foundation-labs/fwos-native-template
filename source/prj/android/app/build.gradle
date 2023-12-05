@@ -150,7 +150,7 @@ dependencies {
     implementation project(":mendixnative-release")
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //implementation "org.webkit:android-jsc:r245459"
-    implementation "org.webkit:android-jsc:r174650"
+    //implementation "org.webkit:android-jsc:r174650"
 
     // Explicit add okhttp
     implementation("com.squareup.okhttp3:okhttp:4.9.1")

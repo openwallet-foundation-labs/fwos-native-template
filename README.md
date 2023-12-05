@@ -89,8 +89,10 @@ if (enableHermes) {
 }
 ```
 
+Be sure to comment out the `jsc` implementation line
+
 ```
-implementation "org.webkit:android-jsc:r174650"
+//implementation "org.webkit:android-jsc:r245459
 ```
 
 For smaller APK sizes, limit the buildTypes by editing `android/app/build.gradle` and add abiFilters as follows [reference](https://developer.android.com/ndk/guides/abis)
