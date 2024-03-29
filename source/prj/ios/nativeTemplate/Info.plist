@@ -54,6 +54,8 @@
     <string>To use that feature, the app needs access to your location.</string>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
     <string>To use that feature, the app needs access to your location.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>To use that feature, the app needs access to your Photo library.</string>
     <key>Runtime url</key>
     <string>$(RUNTIME_URL)</string>
     <key>TargetName</key>

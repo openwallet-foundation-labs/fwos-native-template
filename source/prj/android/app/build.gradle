@@ -5,7 +5,7 @@ import com.android.build.OutputFile
 
 project.ext.react = [
         bundleForVariant: { def variant -> false },
-        enableHermes : false  // clean and rebuild if changing
+        enableHermes : true  // clean and rebuild if changing
 ]
 
 apply from: file("../../node_modules/react-native/react.gradle")
@@ -45,7 +45,7 @@ def jscFlavor = "org.webkit:android-jsc:+"
  * on project.ext.react, JavaScript will not be compiled to Hermes Bytecode
  * and the benefits of using Hermes will therefore be sharply reduced.
  */
-def enableHermes = project.ext.react.get("enableHermes", false);
+def enableHermes = project.ext.react.get("enableHermes", true);
 
 android {
     // We use NDK 23 which has both M1 support and is the side-by-side NDK version from AGP.
@@ -92,6 +92,15 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
+        }
+        debug {
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
         }
     }
     // applicationVariants are e.g. debug, release
@@ -122,6 +131,9 @@ dependencies {
 
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
+    //Required by Credo (Formerly Aries Framework JavaScript)
+    implementation 'net.java.dev.jna:jna:5.2.0'
+
     // Flipper debugger
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group: "com.facebook.fbjni"
@@ -136,8 +148,11 @@ dependencies {
 
     // Javascript engine
     if (enableHermes) {
-        def hermesPath = "../../node_modules/hermes-engine/android/";
-        implementation files(hermesPath + "hermes-debug.aar")
+        //def hermesPath = "../../node_modules/hermes-engine/android/";
+        //implementation files(hermesPath + "hermes-debug.aar")
+        implementation("com.facebook.react:hermes-engine:+") {
+            exclude group:'com.facebook.fbjni'
+        }
     } else {
         implementation jscFlavor
     }
@@ -146,7 +161,7 @@ dependencies {
     implementation project(":react-native-code-push")
     implementation project(":mendixnative-release")
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.webkit:android-jsc:r245459"
+    //implementation "org.webkit:android-jsc:r245459"
 
     // Explicit add okhttp
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
