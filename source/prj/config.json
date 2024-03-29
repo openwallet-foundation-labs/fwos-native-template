@@ -1,10 +1,10 @@
 {
     "configVersion": 2,
-    "appIdentifier": "myapp.ariessdkmendix",
-    "appName": "aries-sdk-mendix",
+    "appIdentifier": "app.ufwfoundation.fwos",
+    "appName": "FWOS Demo",
     "bundleName": {
-        "main": "ariesSdkMendix",
-        "dev": "ariesSdkMendDev"
+        "main": "FWOSDemoApp",
+        "dev": "FWOSDemoAppDev"
     },
     "deviceTarget": {
         "phone": true,
@@ -122,7 +122,7 @@
             "enabled": false
         }
     },
-    "appVersion": "0.0.1",
-    "buildNumber": 1,
+    "appVersion": "0.0.3",
+    "buildNumber": 3,
     "runtimeUrl": "http://localhost:8080"
 }

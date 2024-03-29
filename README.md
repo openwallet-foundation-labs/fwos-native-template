@@ -36,10 +36,32 @@ buildscript {
     ext {
         ...
         minSdkVersion = 21
-	ndkVersion = "23.2.8568313"
+	    //ndkVersion = "23.2.8568313"
+        ndkVersion = "25.1.8937393"
         ...
     }
 }
+```
+
+Add conditional logic for `repo.url`
+
+```
+allprojects {
+    repositories {
+        all { repo ->
+            if (repo.hasProperty('url')) {
+                println repo.url.toString()
+                if (repo.url.toString().contains("jcenter.bintray.com") || repo.url.toString().contains("jitpack.io")) {
+                    project.logger.warn "Repository ${repo.url} removed."
+                    remove repo
+                    google()
+                    mavenLocal()
+                    mavenCentral()
+                }
+            }
+        }
+   ...
+
 ```
 
 Add the Sovrin maven repository to `android/build.gradle`
@@ -61,6 +83,7 @@ Edit `android/app/build.gradle` and add JNA as follows
 ```
 dependencies {
     ...
+    //Required by Credo (Formerly Aries Framework JavaScript)
     implementation 'net.java.dev.jna:jna:5.2.0'
     ...
 }
@@ -119,56 +142,34 @@ Install the node modules by running the following
 
 ```
 npm install --legacy-peer-deps
-npm install @aries-framework/react-native@^0.4.1
-npm install @aries-framework/core@^0.4.1
-npm install @aries-framework/anoncreds@^0.4.1
-npm install @aries-framework/anoncreds-rs@^0.4.1
-npm install @hyperledger/anoncreds-react-native@^0.1.0
-npm install @hyperledger/aries-askar-react-native@^0.1.0
-npm install @aries-framework/indy-vdr@0.4.1
-npm install @hyperledger/indy-vdr-shared@0.1.0
-npm install @hyperledger/indy-vdr-react-native@^0.1.0
-npm install react-native-sensitive-info@next
-npm install react-native-fs
-npm install react-native-get-random-values
-npm install react-native-camera
-npm install react-native-argon2 --save
-npm install --save react-native-crypto
-npm install --save react-native-randombytes
-npm install --save-dev rn-nodeify
+npm run configure
 ```
 
 ## Native Template - iOS
 
-This native template is located in directory `source` in this source tree.
+This native template is located in directory `source/prj` in this source tree.
 
 Install the node modules by running the following
 
 ```
 npm install --legacy-peer-deps
-npm install @aries-framework/react-native@^0.4.0
-npm install @aries-framework/core@^0.4.0
-npm install @aries-framework/anoncreds@^0.4.0
-npm install @aries-framework/anoncreds-rs@^0.4.0
-npm install @hyperledger/anoncreds-react-native@^0.1.0
-npm install @hyperledger/aries-askar-react-native@^0.1.0
-npm install @aries-framework/indy-vdr@0.4.0
-npm install @hyperledger/indy-vdr-shared@0.1.0
-npm install @hyperledger/indy-vdr-react-native@^0.1.0
-npm install react-native-sensitive-info@next
-npm install react-native-fs
-npm install react-native-get-random-values
-npm install react-native-camera
-npm install react-native-argon2 --save
-npm install --save react-native-crypto
-npm install --save react-native-randombytes
-npm install --save-dev rn-nodeify
+npm run configure
 ```
 
 Ensure the following sources are listed in `ios/Podfile`
 
 ```
 source 'https://cdn.cocoapods.org'
+```
+
+For `@aries-framework/cheqd` to work, the Hermes engine needs to be used instead of JSCore. To do so, ammend `ios/Podfile` as follows:
+
+```
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # Hermes is disabled by default to avoid incompatibilities and slowness with Mendix Runtime.
+    :hermes_enabled => true,
+    :fabric_enabled => false,
 ```
 
 Install the pods as follows

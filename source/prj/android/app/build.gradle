@@ -5,7 +5,7 @@ import com.android.build.OutputFile
 
 project.ext.react = [
         bundleForVariant: { def variant -> false },
-        enableHermes : true // clean and rebuild if changing
+        enableHermes : true  // clean and rebuild if changing
 ]
 
 apply from: file("../../node_modules/react-native/react.gradle")
@@ -59,12 +59,12 @@ android {
     }
     namespace "com.mendix.nativetemplate"
     defaultConfig {
-        applicationId 'io.entidad.app.fwos'
+        applicationId "app.ufwfoundation.fwos"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         missingDimensionStrategy "react-native-camera", "general"
-        versionCode 2
-        versionName '0.0.2'
+        versionCode 3
+        versionName "0.0.3"
         testBuildType System.getProperty("testBuildType", "debug")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         resValue "string", "CODE_PUSH_APK_BUILD_TIME", String.format("\"%d\"", System.currentTimeMillis())
@@ -92,6 +92,15 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
+        }
+        debug {
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
         }
     }
     // applicationVariants are e.g. debug, release
@@ -122,6 +131,9 @@ dependencies {
 
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
+    //Required by Credo (Formerly Aries Framework JavaScript)
+    implementation 'net.java.dev.jna:jna:5.2.0'
+
     // Flipper debugger
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group: "com.facebook.fbjni"
@@ -139,7 +151,7 @@ dependencies {
         //def hermesPath = "../../node_modules/hermes-engine/android/";
         //implementation files(hermesPath + "hermes-debug.aar")
         implementation("com.facebook.react:hermes-engine:+") {
-                exclude group:'com.facebook.fbjni'
+            exclude group:'com.facebook.fbjni'
         }
     } else {
         implementation jscFlavor
@@ -150,7 +162,6 @@ dependencies {
     implementation project(":mendixnative-release")
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //implementation "org.webkit:android-jsc:r245459"
-    //implementation "org.webkit:android-jsc:r174650"
 
     // Explicit add okhttp
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
@@ -168,7 +179,6 @@ dependencies {
 
     androidTestImplementation("com.wix:detox:+")  { transitive = true }
     androidTestImplementation "junit:junit:4.12"
-    implementation 'net.java.dev.jna:jna:5.2.0'
 }
 
 configurations.all {

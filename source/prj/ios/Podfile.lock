@@ -3,7 +3,7 @@ PODS:
     - React
     - React-callinvoker
     - React-Core
-  - aries-askar (0.1.0):
+  - aries-askar (0.1.1):
     - React
     - React-callinvoker
     - React-Core
@@ -454,7 +454,7 @@ PODS:
     - React-Core
   - react-native-cameraroll (4.0.1):
     - React
-  - react-native-get-random-values (1.9.0):
+  - react-native-get-random-values (1.11.0):
     - React-Core
   - react-native-image-picker (5.0.1):
     - React-Core
@@ -869,7 +869,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   anoncreds: 8e6ab626d5250ae6301c3e96d6fc739186e083f0
-  aries-askar: fde2367dd2eec5c646e71cd909f518a3585b0f17
+  aries-askar: 738c677e194913ed3c256adc953db3fe0494f8f8
   boost: a7c83b31436843459a1961bfd74b96033dc77234
   CatCrypto: a477899b6be4954e75be4897e732da098cc0a5a8
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
@@ -924,7 +924,7 @@ SPEC CHECKSUMS:
   React-logger: e9f407f9fdf3f3ce7749ae6f88affe63e8446019
   react-native-camera: 35854c4f764a4a6cf61c1c3525888b92f0fe4b31
   react-native-cameraroll: 60ba0068826eab1c8d43146191bafd4363ea58a7
-  react-native-get-random-values: dee677497c6a740b71e5612e8dbd83e7539ed5bb
+  react-native-get-random-values: 21325b2244dfa6b58878f51f9aa42821e7ba3d06
   react-native-image-picker: 8cb4280e2c1efc3daeb2d9d597f9429a60472e40
   react-native-randombytes: 421f1c7d48c0af8dbcd471b0324393ebf8fe7846
   react-native-safe-area-context: 79fea126c6830c85f65947c223a5e3058a666937
@@ -971,4 +971,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 3490d1e2ae12abe3a27c3ef38cca30160b888674
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.15.2
