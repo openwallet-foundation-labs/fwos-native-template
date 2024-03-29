@@ -5,7 +5,7 @@ import com.android.build.OutputFile
 
 project.ext.react = [
         bundleForVariant: { def variant -> false },
-        enableHermes : true // clean and rebuild if changing
+        enableHermes : false  // clean and rebuild if changing
 ]
 
 apply from: file("../../node_modules/react-native/react.gradle")
@@ -45,7 +45,7 @@ def jscFlavor = "org.webkit:android-jsc:+"
  * on project.ext.react, JavaScript will not be compiled to Hermes Bytecode
  * and the benefits of using Hermes will therefore be sharply reduced.
  */
-def enableHermes = project.ext.react.get("enableHermes", true);
+def enableHermes = project.ext.react.get("enableHermes", false);
 
 android {
     // We use NDK 23 which has both M1 support and is the side-by-side NDK version from AGP.
@@ -59,12 +59,12 @@ android {
     }
     namespace "com.mendix.nativetemplate"
     defaultConfig {
-        applicationId 'io.entidad.app.fwos'
+        applicationId "app.ufwfoundation.fwos"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         missingDimensionStrategy "react-native-camera", "general"
-        versionCode 2
-        versionName '0.0.2'
+        versionCode 3
+        versionName "0.0.3"
         testBuildType System.getProperty("testBuildType", "debug")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         resValue "string", "CODE_PUSH_APK_BUILD_TIME", String.format("\"%d\"", System.currentTimeMillis())
@@ -136,11 +136,8 @@ dependencies {
 
     // Javascript engine
     if (enableHermes) {
-        //def hermesPath = "../../node_modules/hermes-engine/android/";
-        //implementation files(hermesPath + "hermes-debug.aar")
-        implementation("com.facebook.react:hermes-engine:+") {
-                exclude group:'com.facebook.fbjni'
-        }
+        def hermesPath = "../../node_modules/hermes-engine/android/";
+        implementation files(hermesPath + "hermes-debug.aar")
     } else {
         implementation jscFlavor
     }
@@ -149,8 +146,7 @@ dependencies {
     implementation project(":react-native-code-push")
     implementation project(":mendixnative-release")
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    //implementation "org.webkit:android-jsc:r245459"
-    //implementation "org.webkit:android-jsc:r174650"
+    implementation "org.webkit:android-jsc:r245459"
 
     // Explicit add okhttp
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
@@ -168,7 +164,6 @@ dependencies {
 
     androidTestImplementation("com.wix:detox:+")  { transitive = true }
     androidTestImplementation "junit:junit:4.12"
-    implementation 'net.java.dev.jna:jna:5.2.0'
 }
 
 configurations.all {

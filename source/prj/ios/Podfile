@@ -17,7 +17,7 @@ def common_pods
   use_react_native!(
     :path => config[:reactNativePath],
     # Hermes is disabled by default to avoid incompatibilities and slowness with Mendix Runtime.
-    :hermes_enabled => true,
+    :hermes_enabled => false,
     :fabric_enabled => false,
     # Enables Flipper.
     #

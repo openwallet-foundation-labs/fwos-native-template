@@ -4,7 +4,6 @@ buildscript {
     ext {
         buildToolsVersion = "31.0.0"
         minSdkVersion = 21
-	ndkVersion = "23.2.8568313"
         compileSdkVersion = 33
         targetSdkVersion = 33
         kotlin_version = "1.7.21"
@@ -84,9 +83,6 @@ allprojects {
         }
         maven {
             url "https://maven.scijava.org/content/repositories/jcenter/"
-        }
-        maven {
-            url 'https://repo.sovrin.org/repository/maven-public'
         }
     }
 }
